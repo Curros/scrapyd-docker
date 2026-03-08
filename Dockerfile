@@ -14,9 +14,10 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the “image canonical files” to /app-image
-#COPY scrapy.cfg /app-image/scrapy.cfg
 COPY scrapyd.png /app-image/scrapyd.png
+
+COPY scrapy.cfg /app-image/scrapy.cfg
+COPY scraper /app-image/scraper
 
 EXPOSE 6800
 

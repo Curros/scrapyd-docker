@@ -19,7 +19,8 @@ scrapyd-docker/
 ├── scripts/            # Entrypoint and helper scripts
 │   └── entrypoint.sh
 ├── .env                # For now is just used for the icon
-├── scrapy.cfg          # Main Scrapy configuration
+├── scraper/            # Default configuration for an empty scraper.
+├── scrapy.cfg          # Main Scrapy configuration, with the extra to make it work.
 ├── scrapyd.png         # Scrapyd icon for UnRaid
 ├── Dockerfile
 ├── docker-compose.yml
@@ -54,7 +55,7 @@ scrapyd-docker/
     Copy your Scrapy spiders into ``appdata/scrapyd/scraper`` or use ``curl`` to schedule them.
 
     ```bash
-    curl http://<scrapyd-ip>:6800/schedule.json -d project=myproject -d spider=myspider
+    curl http://<scrapyd-ip>:6800/schedule.json -d project=default -d spider=myspider
     ```
 
 ## Updating Configuration

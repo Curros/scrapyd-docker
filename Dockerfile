@@ -15,7 +15,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the “image canonical files” to /app-image
-COPY scrapy.cfg /app-image/scrapy.cfg
+#COPY scrapy.cfg /app-image/scrapy.cfg
 COPY scrapyd.png /app-image/scrapyd.png
 
 EXPOSE 6800

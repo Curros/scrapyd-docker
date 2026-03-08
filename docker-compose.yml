@@ -1,0 +1,16 @@
+services:
+  scrapyd:
+    build: .
+    container_name: scrapyd
+    network_mode: bridge
+    ports:
+      - "6800:6800"
+    user: "99:100" # UID/GID de unRAID para appdata
+    environment:
+      - PUID=99
+      - PGID=100
+    volumes:
+      - /mnt/user/appdata/scrapyd:/app
+    labels:
+      - "net.unraid.docker.icon=${ICON_PATH}"
+      - "net.unraid.docker.managed=docker-compose"
